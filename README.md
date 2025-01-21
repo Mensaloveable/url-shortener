@@ -63,7 +63,7 @@ src
 
 ### 1. Create a Shortened URL
 
-- **Endpoint**: `POST /api/shorten`
+- **Endpoint**: `POST /shorten`
 - **Description**: Generates a short URL from a long URL.
 - **Request Body**:
   ```json
@@ -86,7 +86,7 @@ src
 
 ### 3. Get All Shortened URLs
 
-- **Endpoint**: `GET /api/urls`
+- **Endpoint**: `GET /urls`
 - **Description**: Retrieves all stored URLs.
 - **Response**:
   ```json
@@ -102,7 +102,7 @@ src
 
 ### 4. Delete a Shortened URL
 
-- **Endpoint**: `DELETE /api/urls/:id`
+- **Endpoint**: `DELETE /urls/:id`
 - **Description**: Deletes a URL entry by ID.
 
 ## URL Validation
