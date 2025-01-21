@@ -18,7 +18,7 @@ A simple URL shortener application built with Node.js, Express, MongoDB, and Mon
 ## Project Structure
 
 ```
-project-folder
+src
 ├── config
 │   └── db.js        # MongoDB connection setup
 ├── models
@@ -33,8 +33,8 @@ project-folder
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
-   cd project-folder
+   git clone [<repository-url>](https://github.com/Mensaloveable/url-shortener)
+   cd url-shortener
    ```
 
 2. Install dependencies:
@@ -116,7 +116,3 @@ The app uses a regex pattern to validate URLs. Only URLs starting with `http://`
    - Create a new web service.
    - Set `MONGO_URI` as an environment variable.
    - Use `npm install` as the build command and `npm start` as the start command.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
