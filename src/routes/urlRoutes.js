@@ -5,10 +5,12 @@ import validator from "validator";
 const router = express.Router();
 
 // Create a shortened URL
+
 // Health check
 router.get("/health", (req, res) => {
   res.status(200).json({ message: "Healthy" });
 });
+
 router.post("/shorten", async (req, res) => {
   const { originalUrl } = req.body;
 
@@ -37,6 +39,16 @@ router.post("/shorten", async (req, res) => {
   }
 });
 
+// Read all shortened URLs
+router.get("/urls", async (req, res) => {
+  try {
+    const urls = await Url.find();
+    res.status(200).json(urls);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching URLs", error });
+  }
+});
+
 // Redirect to the original URL
 router.get("/:shortUrl", async (req, res) => {
   const { shortUrl } = req.params;
@@ -47,16 +59,6 @@ router.get("/:shortUrl", async (req, res) => {
     res.redirect(url.originalUrl);
   } catch (error) {
     res.status(500).json({ message: "Error fetching URL", error });
-  }
-});
-
-// Read all shortened URLs
-router.get("/urls", async (req, res) => {
-  try {
-    const urls = await Url.find();
-    res.status(200).json(urls);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching URLs", error });
   }
 });
 
